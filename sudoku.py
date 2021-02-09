@@ -2,15 +2,15 @@ import os
 from colorama import Fore
 
 board = [
-[0] * 9,
-[0] * 9,
-[0] * 9,
-[0] * 9,
-[0] * 9,
-[0] * 9,
-[0] * 9,
-[0] * 9,
-[0] * 9,
+[0, 2, 0, 5, 0, 0, 0, 0, 0],
+[6, 4, 9, 8, 3, 1, 7, 5, 2],
+[5, 0, 0, 6, 0, 0, 0, 0, 0],
+[0, 0, 3, 0, 8, 4, 6, 9, 0],
+[0, 1, 8, 3, 9, 0, 0, 4, 7],
+[0, 0, 6, 1, 0, 0, 2, 0, 8],
+[0, 8, 0, 0, 0, 0, 9, 2, 4],
+[0, 7, 4, 0, 0, 8, 1, 0, 5],
+[0, 6, 0, 0, 0, 0, 0, 0, 0],
 ]
 
 colours = [
@@ -51,15 +51,15 @@ def print_board(_board):
 
 def fill_board(_board):
 	for y, row in enumerate(_board):
-		for x in range(len(row)):
-			num = input("enter number: ")
-			os.system("clear")
+		_row = input("enter row: ")
+		os.system("clear")
+		for x, num in enumerate(_row):
 			try:
 				_board[y][x] = int(num)
 			except ValueError:
 				_board[y][x] = 0
 
-			print_board(_board)
+		print_board(_board)
 
 def get_squares(x, y, _board):
 	x = int(x / 3) * 3
