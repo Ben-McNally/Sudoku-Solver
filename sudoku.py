@@ -134,5 +134,5 @@ def solve_board(x, y, _board):
 
 
 if __name__ == "__main__":
-	fill_board
+	fill_board(board)
 	solve_board(0, 0, board)
